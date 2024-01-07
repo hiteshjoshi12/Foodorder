@@ -1,17 +1,17 @@
-import React from "react";
+import React, { Suspense ,lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header  from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
 import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
 import About from "./About";
-import Body from "./Body";
+
 import Contact from "./Contact";
-import Footer from "./Footer";
-import Header from "./Header";
+
 import {NoMatch} from "./NoMatch"
 import Restromenu from "./Restromenu";
-// const Instamart = lazy(()=> import ("./Components/Instamart"));
+import Shimmer from "./Shimmer";
+const Instamart = lazy(()=> import ("./Instamart"));
 
 
 
@@ -45,6 +45,11 @@ const appRouter= createBrowserRouter([
       {
         path:"/Contact",
         element:<Contact/>,
+      },
+      {
+        path: "/instamart",
+        element: <Suspense fallback ={<Shimmer />}> <Instamart />  </Suspense>
+
       },
       {
         path:"/Restro/:resid",

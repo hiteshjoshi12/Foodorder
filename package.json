@@ -19,7 +19,10 @@
     "last 2 Chrome versions"
   ],
   "devDependencies": {
+    "@babel/core": "^7.23.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "process": "^0.11.10"
+    "postcss": "^8.4.33",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
   }
 }
